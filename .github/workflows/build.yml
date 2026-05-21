@@ -31,7 +31,7 @@ jobs:
       - name: 导入X60Pro默认配置
         run: cp defconfig/mt7986-ax6000.config .config
 
-      - name: 一键开启所需插件
+      - name: 开启常用插件
         run: |
           # DDNS
           sed -i 's/# CONFIG_PACKAGE_luci-app-ddns is not set/CONFIG_PACKAGE_luci-app-ddns=y/' .config
