@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# ==============================================
+# ======================================================
 # OpenWrt 一键恢复配置脚本（恢复出厂也生效）
-# 作用：刷完固件自动恢复所有备份配置
-# ==============================================
+# 刷完固件自动恢复所有备份配置 + 插件自启
+# ======================================================
 
 # 1. 把固件里打包的备份配置，复制到实际系统配置目录
 cp -f /rom/etc/config/* /etc/config/
@@ -17,7 +17,13 @@ chmod -R 600 /etc/config/
 /etc/init.d/firewall restart
 wifi reload
 
-# 4. 标记脚本已执行，避免重复运行
+# 4. 插件自动启用并启动（和你内置的四大插件一一对应）
+/etc/init.d/ddns enable && /etc/init.d/ddns start
+/etc/init.d/openclash enable && /etc/init.d/openclash start
+/etc/init.d/adguardhome enable && /etc/init.d/adguardhome start
+/etc/init.d/passwall enable && /etc/init.d/passwall start
+
+# 5. 标记脚本已执行，避免重复运行
 touch /etc/config/.uci-defaults-done
 
 exit 0
