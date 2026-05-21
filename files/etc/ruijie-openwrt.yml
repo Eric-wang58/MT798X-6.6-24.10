@@ -109,6 +109,28 @@ jobs:
       run: |
         make defconfig
 
+        # ==============================
+        # 内置插件：DDNS + OpenClash + AdGuardHome + Passwall
+        # ==============================
+        # DDNS
+        sed -i 's/# CONFIG_PACKAGE_luci-app-ddns is not set/CONFIG_PACKAGE_luci-app-ddns=y/' .config
+        sed -i 's/# CONFIG_PACKAGE_ddns-scripts is not set/CONFIG_PACKAGE_ddns-scripts=y/' .config
+
+        # OpenClash
+        sed -i 's/# CONFIG_PACKAGE_luci-app-openclash is not set/CONFIG_PACKAGE_luci-app-openclash=y/' .config
+        sed -i 's/# CONFIG_PACKAGE_openclash is not set/CONFIG_PACKAGE_openclash=y/' .config
+
+        # AdGuardHome
+        sed -i 's/# CONFIG_PACKAGE_luci-app-adguardhome is not set/CONFIG_PACKAGE_luci-app-adguardhome=y/' .config
+        sed -i 's/# CONFIG_PACKAGE_adguardhome is not set/CONFIG_PACKAGE_adguardhome=y/' .config
+
+        # Passwall
+        sed -i 's/# CONFIG_PACKAGE_luci-app-passwall is not set/CONFIG_PACKAGE_luci-app-passwall=y/' .config
+        sed -i 's/# CONFIG_PACKAGE_passwall is not set/CONFIG_PACKAGE_passwall=y/' .config
+        sed -i 's/# CONFIG_PACKAGE_passwall2 is not set/CONFIG_PACKAGE_passwall2=y/' .config
+
+        make defconfig
+
     - name: Download Package
       id: download-package
       run: |
