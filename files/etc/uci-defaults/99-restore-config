@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# ==============================================
+# OpenWrt 一键恢复配置脚本（恢复出厂也生效）
+# 作用：刷完固件自动恢复所有备份配置
+# ==============================================
+
+# 1. 把固件里打包的备份配置，复制到实际系统配置目录
+cp -f /rom/etc/config/* /etc/config/
+
+# 2. 修复权限，防止配置文件无法读取
+chown -R root:root /etc/config/
+chmod -R 600 /etc/config/
+
+# 3. 重启核心服务，让配置立即生效
+/etc/init.d/network restart
+/etc/init.d/firewall restart
+wifi reload
+
+# 4. 标记脚本已执行，避免重复运行
+touch /etc/config/.uci-defaults-done
+
+exit 0
