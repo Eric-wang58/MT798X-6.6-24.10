@@ -1,0 +1,4682 @@
+---
+mixed-port: 7893
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+external-controller: 0.0.0.0:9090
+unified-delay: true
+tcp-concurrent: true
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - "*"
+  - "+.lan"
+  - "+.local"
+  - time.*.com
+  - ntp.*.com
+  - "+.market.xiaomi.com"
+  - geosite:cn
+  use-hosts: true
+  respect-rules: true
+  nameserver-policy:
+    geosite:cn,private:
+    - https://120.53.53.53/dns-query
+    - https://223.5.5.5/dns-query
+    - https://223.5.5.5/dns-query#h3=true
+    geosite:!cn,!private:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+    - https://1.0.0.1/dns-query
+    - https://8.8.4.4/dns-query
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://120.53.53.53/dns-query
+  - https://223.5.5.5/dns-query#h3=true
+  default-nameserver:
+  - https://120.53.53.53/dns-query
+  - https://223.5.5.5/dns-query
+  - https://223.6.6.6/dns-query
+  nameserver:
+  - 114.114.114.114
+  - 119.28.28.28
+  - 223.4.4.4
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  fallback:
+  - https://dns.google/dns-query
+  - https://dns.cloudflare.com/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+    - 127.0.0.0/8
+    domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.twitter.com"
+ntp:
+  enable: true
+  write-to-system: false
+  server: time.windows.com
+  port: 123
+  interval: 30
+proxies:
+- name: 剩余流量：99.07 GB
+  type: vless
+  server: heazts7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 距离下次重置剩余：21 天
+  type: vless
+  server: heazts7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 套餐到期：2026-05-12
+  type: vless
+  server: heazts7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 英国 | 0x 导航页1：freecloud.mssg.me
+  type: vless
+  server: heazts7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xxzluo.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 无法使用-见官网教程说明
+  type: vless
+  server: 6it7bn2.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vrdpe.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vrdpe.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 英国伦敦1-10Gbps-高性能-AN | 0x
+  type: vless
+  server: u1cceozl.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ljwmwyh.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ljwmwyh.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 英国伦敦1-10Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ohoonjs.m3u8.eugbcasg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ohoonjs.m3u8.eugbcasg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.44h-AOrD2oz2uOMssTdsXsdi5lqQFh9xtNeIVqU7mWA
+- name: 新加坡1-10Gbps-AN | 1x
+  type: vless
+  server: qi1gvq.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: hkqqelb.m3u8.emcnsdha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: hkqqelb.m3u8.emcnsdha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.dFN5GIdsprJ71R8nOfnXZC6C1qvINGkliPUO-Z3xzGE
+- name: 日本东京1-10Gbps-GCORE-AN | 1x
+  type: vless
+  server: p5apgu.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: lqpvqx.m3u8.acgfsaoausa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: lqpvqx.m3u8.acgfsaoausa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.T80I4kkVnovSMnyPxnCXPP6AxAAgs3X-tBVWZIL7miA
+- name: 日本东京1-AN | 1x
+  type: vless
+  server: ya7xqn.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: snspgz.m3u8.dsicbuyga.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: snspgz.m3u8.dsicbuyga.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.A276dOkXnE57eSJ6IVtotNQyi2CBw9do0HLsaSYq0xM
+- name: 日本东京2-AN | 1x
+  type: vless
+  server: a3dazu0.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: fxqptj.m3u8.dsicbuygb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: fxqptj.m3u8.dsicbuygb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.wHnWxFAyD1LMiRzgabUdzlXVpYtglFEp4BcULOadCVI
+- name: 日本东京3-AN | 1x
+  type: vless
+  server: qq6e7kwl.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kujyy.m3u8.dsicbuygc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kujyy.m3u8.dsicbuygc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.7FPD3bmIW4WrZLM1FWYh7-OJN8SgRf3L7SNhzndZJzw
+- name: 日本东京4-AN | 1x
+  type: vless
+  server: uyym11ur.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kjoyu.m3u8.dsicbuygd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kjoyu.m3u8.dsicbuygd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.SIpTcKX4VUQZ_s7jYD8oW_osxAeuLFRwTvxGvqDuAXY
+- name: 日本大阪1-AN | 1x
+  type: vless
+  server: y801vz.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: nxjlb.m3u8.csicguyga.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: nxjlb.m3u8.csicguyga.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.xip3F99q2SfthfcRbSB-jUVE6xl2qbmFQz4LuFqwKkI
+- name: 日本大阪2-AN | 1x
+  type: vless
+  server: 6btsbw86.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: gxtjcjb.m3u8.csicguygb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: gxtjcjb.m3u8.csicguygb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ibOgl8xq51U-COyRZvRugx-cGTee9-jMAz1943F3mDA
+- name: 日本大阪3-AN | 1x
+  type: vless
+  server: 5glbh65x.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vadet.m3u8.csicguygc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vadet.m3u8.csicguygc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.qfhWc7DTSnxxMZdQvlJTONlu_sWpWc13-bAMLFE-igc
+- name: 日本大阪4-AN | 1x
+  type: vless
+  server: o900p8u5.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: gdhydup.m3u8.csicguygd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: gdhydup.m3u8.csicguygd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.mMy-gW1qE9I2VVH_7GsN8LFLk0ilM3g5rIZFisMswUg
+- name: 印度尼西亚1-AN | 1x
+  type: vless
+  server: 51j9ezg.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qrztkrr.m3u8.ydnsbca.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qrztkrr.m3u8.ydnsbca.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.6tYDFha4A3bHijm6G80mBOyQ7ymaWtS3ixqzvxMejBo
+- name: 印度尼西亚2-AN | 1x
+  type: vless
+  server: ov2ej888.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ujmkndn.m3u8.ydnsbcb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ujmkndn.m3u8.ydnsbcb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.70nfP-CSaoTYAIbMAqwcKe33BFjP8W6kufsI2OQp8DY
+- name: 印度尼西亚3-AN | 1x
+  type: vless
+  server: 3i1di4r6.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: uohyj.m3u8.ydnsbcc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: uohyj.m3u8.ydnsbcc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.70nfP-CSaoTYAIbMAqwcKe33BFjP8W6kufsI2OQp8DY
+- name: 印度尼西亚4-AN | 1x
+  type: vless
+  server: rlg8ij.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: lmvrmtd.m3u8.ydnsbcd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: lmvrmtd.m3u8.ydnsbcd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Ew2gt20nCER0XKoVnLg9Xbfwme7j2kp2_URqeOm1omg
+- name: 印度-海得拉巴1-AN | 1x
+  type: vless
+  server: k29u5y0y.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: zgzbabp.m3u8.ysucba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: zgzbabp.m3u8.ysucba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Qp--cX0iOroSQKvyy1p3UT8K8-wui2X6YQI1RRdRklw
+- name: 印度-海得拉巴2-AN | 1x
+  type: vless
+  server: e4551g.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kmwmf.m3u8.ysucbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kmwmf.m3u8.ysucbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.9nogZJwMquH0N20tjahHjPER4tI-lowp3ALx_z-HmSw
+- name: 印度-海得拉巴3-AN | 1x
+  type: vless
+  server: qsht9ly.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: aoubflv.m3u8.ysucbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: aoubflv.m3u8.ysucbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.nQLcxW9W6wdqz4JuRoCP6U3InVN1swU1jvtCNcxbcBA
+- name: 印度-海得拉巴4-AN | 1x
+  type: vless
+  server: 6mckjqp.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ngyyrrp.m3u8.ysucbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ngyyrrp.m3u8.ysucbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.fXC_OV-gu0KEbf10zOroXdIyGTzAggEpL3AZ5DXFjhA
+- name: 泰国1-1Gbps-高性能-AN | 1x
+  type: vless
+  server: v4s9qj8.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: pfingg.m3u8.tbbsbda.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: pfingg.m3u8.tbbsbda.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.fXmuviM9zekjsrA727KVK0oC6NSpZ2tiRACwSoZQygY
+- name: 越南-河内无分流直出1-AN | 1x
+  type: vless
+  server: c5fgnlu.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qgmiqm.m3u8.acgkwya.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qgmiqm.m3u8.acgkwya.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Z4mk3OVnoSBngS4NPMdrKa-lAjWwJehOrz4q_wjjihY
+- name: 马来西亚1-吉隆坡-无分流直出1-AN | 1x
+  type: vless
+  server: he8qnq.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: essckvo.m3u8.acgcdnbli.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: essckvo.m3u8.acgcdnbli.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.uF5lQalZpjacD5-GXIH5DF8cQKwb99_Oza1s2YtzyEQ
+- name: 越南-河内无分流直出2-AN | 1x
+  type: vless
+  server: 65yzuy0.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: uidoex.m3u8.acgkwyb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: uidoex.m3u8.acgkwyb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.O6RLY2eZopgVP5jhRr-V9mB4Y9WWws4J29VLbOhqzFQ
+- name: 越南-河内无分流直出3-AN | 1x
+  type: vless
+  server: 5s9m0xd.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: hmqgcqh.m3u8.acgkwyc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: hmqgcqh.m3u8.acgkwyc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.MiDYRpWSIizAMebcr72khKrFmUUro0ME_yKwSdk_IHU
+- name: 澳大利亚墨尔本1-AN | 1x
+  type: vless
+  server: t8hea0w.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ggfpq.m3u8.adlycba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ggfpq.m3u8.adlycba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.GzJwKEOSNXk6wFpwpbImoKjvt81QNS8RRbzk2uOkdz4
+- name: 澳大利亚墨尔本2-AN | 1x
+  type: vless
+  server: pvxtz8ys.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: excvlex.m3u8.adlycbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: excvlex.m3u8.adlycbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.S-Q7aDAzgnPgZURfnY1u2wnY5GAbA2Gw-5XnBBjsxCM
+- name: 沙特阿拉伯1-AN | 1x
+  type: vless
+  server: hnkkve3.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: lfxcntq.m3u8.adlycbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: lfxcntq.m3u8.adlycbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.OFLUIIvroZI1qf0NvS5IBXgB7d7zoaCdrxijlYdENiY
+- name: 沙特阿拉伯2-AN | 1x
+  type: vless
+  server: a95qyaab.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ujrwst.m3u8.adlycbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ujrwst.m3u8.adlycbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.nzyFX_reKuXxiEF5jkKp45odCcyCkanhnoJdqupKwUc
+- name: 美国东部阿什本1-AN | 1x
+  type: vless
+  server: w6xty4e.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xmvvns.m3u8.ytuchcba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xmvvns.m3u8.ytuchcba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.h_qKCTi3a39EA-jJBhp31ZPo3j8qfDmnsI5Crb1uWU4
+- name: 美国东部阿什本2-AN | 1x
+  type: vless
+  server: j62fr7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: aaxejp.m3u8.ytuchcbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: aaxejp.m3u8.ytuchcbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.OOOco4Nl6ZWQx0OamBG9FZzTXKJCFdl4Pw2aqUlgamA
+- name: 美国东部阿什本3-AN | 1x
+  type: vless
+  server: k2ddi5.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: dpkyto.m3u8.ytuchcbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: dpkyto.m3u8.ytuchcbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.91nbxFeR3OBSqCTZ8aAjFB9C_1peetlI8O7W0xld70I
+- name: 美国东部阿什本4-AN | 1x
+  type: vless
+  server: t1hy5k.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vveqqek.m3u8.acgausa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vveqqek.m3u8.acgausa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.RVY9bT-jvQiKQvpynCE-a4rVHV6nJ6pu6LVqjxUvPF8
+- name: 美国东部阿什本5-AN | 1x
+  type: vless
+  server: dcdkhfc7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: dhtvkgi.m3u8.acgausb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: dhtvkgi.m3u8.acgausb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.kQdSnl8gfR32QElyC6HDZtGwEHG2VU9lKxIuJTgyblE
+- name: 美国东部阿什本6-AN | 1x
+  type: vless
+  server: fy5mg2n.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: fdkpjg.m3u8.acgausc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: fdkpjg.m3u8.acgausc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.GATsZ0_TKj_OKw94-8CqZRSFQiIU-oU2suNEnceNXQk
+- name: 美国东部阿什本7-AN | 1x
+  type: vless
+  server: vofvs3r.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: arpkkn.m3u8.acgausd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: arpkkn.m3u8.acgausd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.I4PvEszvluKYuu5qzdlMqUOV4OJFW7qA_edLDx5JNjw
+- name: 美国西部圣何塞1-AN | 1x
+  type: vless
+  server: 52ouwqn.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ukvexn.m3u8.sjvsnia.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ukvexn.m3u8.sjvsnia.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.VBOOVBAqdz1kHOGsZFpQqSCHdMC7H89slXhPA8_Qsnw
+- name: 美国西部圣何塞2-AN | 1x
+  type: vless
+  server: px7036a.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kgedhqc.m3u8.sjvsnib.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kgedhqc.m3u8.sjvsnib.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.qPJll-z-97EXIn7fqc3kg_zFhLyhOzHuz-6ESJUWWhM
+- name: 美国西部圣何塞3-AN | 1x
+  type: vless
+  server: 6neq9t0.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: glzfea.m3u8.sjvsnic.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: glzfea.m3u8.sjvsnic.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.f2UA92OGo22kj801cJBM8BNET21rwoFI9DBVK7aKTX4
+- name: 美国西部圣何塞4-AN | 1x
+  type: vless
+  server: 4iwoeq.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: etfvm.m3u8.sjvsnid.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: etfvm.m3u8.sjvsnid.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.8HcW3cXD3EEY3JS-YZryFzb6YjAVlc8tWvV3V3nu2lY
+- name: 美国中部芝加哥1-AN | 1x
+  type: vless
+  server: l15bv2j7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: wfmpfq.m3u8.zjbnvuwa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: wfmpfq.m3u8.zjbnvuwa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.q37Siqgt4tY10VCGGDlJ_OByl3HbgPA381ABj0ZGQ04
+- name: 美国中部芝加哥2-AN | 1x
+  type: vless
+  server: sarnri07.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ngdep.m3u8.zjbnvuwb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ngdep.m3u8.zjbnvuwb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.LzhH2tuZeqKDAcHQ_ZUJzpJ1vzFQZME42AxmzPQs0nM
+- name: 美国中部芝加哥3-AN | 1x
+  type: vless
+  server: vrzdmqj.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: hyrlp.m3u8.zjbnvuwc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: hyrlp.m3u8.zjbnvuwc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.YLitzdR7eRAKxMD6B1z9ElQ-HNxKqgN8dzHL2cPk2nE
+- name: 美国中部芝加哥4-AN | 1x
+  type: vless
+  server: 3j885tbv.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: zkryl.m3u8.zjbnvuwd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: zkryl.m3u8.zjbnvuwd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.5Hl0YEgCY-9WoLBV4EpYmmq76kPlnGzAOQLhQZqxw3I
+- name: 美国中部芝加哥5-AN | 1x
+  type: vless
+  server: 1cdh3otr.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: puxlvc.m3u8.zjbnvuwe.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: puxlvc.m3u8.zjbnvuwe.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.NwQ8FQLkvQBa2KQXKMeDKJgYzdaLki_cGY6c3wO37GM
+- name: 美国中部芝加哥6-AN | 1x
+  type: vless
+  server: 7bo5ea0u.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: pnouhgf.m3u8.zjbnvuwf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: pnouhgf.m3u8.zjbnvuwf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Qgj1hwl3gjDpVMCqRhGh8bS7k6-U15hyDO3i0ib99Qg
+- name: 美国中部芝加哥7-AN | 1x
+  type: vless
+  server: 10o21rdc.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: gwszug.m3u8.zjbnvuwg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: gwszug.m3u8.zjbnvuwg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.nReL5Df8SyeyjBL_pHFncu4Bgs_SVpyO6hP8lOTl0S4
+- name: 美国中部芝加哥8-AN | 1x
+  type: vless
+  server: 3c6l6s.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: cksrrg.m3u8.zjbnvuwh.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: cksrrg.m3u8.zjbnvuwh.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.j3B4h07nW3OBEOQNoiXsD15ACBYyaZTah3Z05zte6n8
+- name: 美国西部洛杉矶1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: 9ypdh1g.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: czbpc.m3u8.sdcuikabiua.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: czbpc.m3u8.sdcuikabiua.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.WygKECCNsW3j2lluK1CBLjavNC5UcpjtJ18Lr4-UKQQ
+- name: 美国西部洛杉矶3-1Gbps-高性能-AN | 0x
+  type: vless
+  server: w6wrrat.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vzipjjh.m3u8.pskpa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vzipjjh.m3u8.pskpa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.6LH1p4etxPfTWSML1JDYbe2PGDfpKYQ4wuJgiF5BFSo
+- name: 美国南部达拉斯1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: 12ybfx4i.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: jutbfth.m3u8.sdcuikabiub.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: jutbfth.m3u8.sdcuikabiub.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.M1D0pmZIrPzyzORGGfuADBBB7CYQXqZ3Zmiu5BbJ7zU
+- name: 美国东部纽约1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: u761b90.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: aygnfu.m3u8.sdcuikabiuc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: aygnfu.m3u8.sdcuikabiuc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.GvcvtPAH44kmnZ_hFf6DJrU_1cbbliuwjDwBuB1dSjc
+- name: 美国中部犹他州1-2Gbps-高性能-AN | 0x
+  type: vless
+  server: xjl17m.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: slzpvvm.m3u8.dvsjhba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: slzpvvm.m3u8.dvsjhba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ZTkVYgZPSYTEo1yQ7dgcm29jlfTbcXlCHO9213RdtHw
+- name: 爱尔兰1-都柏林-1Gbps-高性能-AN | 0x
+  type: vless
+  server: 3htfb36d.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vgfwly.m3u8.dvsjhbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vgfwly.m3u8.dvsjhbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.pn5WktRCKcY_SZxMag1Hs-RWwzfTDSDHDfIOJuy-dQc
+- name: 爱尔兰1-都柏林-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: enuye.m3u8.dvsjhbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: enuye.m3u8.dvsjhbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.pn5WktRCKcY_SZxMag1Hs-RWwzfTDSDHDfIOJuy-dQc
+- name: 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-AN | 0x
+  type: vless
+  server: w3ixu8aj.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: aiwfehp.m3u8.dvsjhbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: aiwfehp.m3u8.dvsjhbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.5Eq85DWoPFn77hRFe50lfe0WuMyOMwtGhiIzOd6HhhU
+- name: 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: pmeck.m3u8.dvsjhbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: pmeck.m3u8.dvsjhbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.5Eq85DWoPFn77hRFe50lfe0WuMyOMwtGhiIzOd6HhhU
+- name: 意大利OVH-0.5Gbps-高性能-AN | 0x
+  type: vless
+  server: olpdja.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: atrvbbd.m3u8.dvsjhbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: atrvbbd.m3u8.dvsjhbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.DxgT1byXY40dyFUgJnbyC2SpUV9BjkoyISTKGqUozGg
+- name: 意大利OVH-0.5Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ngwxn.m3u8.dvsjhbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ngwxn.m3u8.dvsjhbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.DxgT1byXY40dyFUgJnbyC2SpUV9BjkoyISTKGqUozGg
+- name: 荷兰南部林堡省1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: rhs9pe.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: oahbgl.m3u8.nspsp.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: oahbgl.m3u8.nspsp.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Ze2TuGlNH9PMdeA-BTKONkKEI4KwF_iHp43nviO57Dk
+- name: 荷兰南部林堡省1-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: nvgxd.m3u8.nspsp.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: nvgxd.m3u8.nspsp.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Ze2TuGlNH9PMdeA-BTKONkKEI4KwF_iHp43nviO57Dk
+- name: 荷兰南部林堡省2-10Gbps-高性能-AN | 0x
+  type: vless
+  server: kvbsmhaq.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qmobe.m3u8.labibcxa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qmobe.m3u8.labibcxa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.mv7wJKobBQvrWUHUvO3s1mqfzyftFwKDrzmKUFd2qX8
+- name: 荷兰南部林堡省2-10Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ihlike.m3u8.labibcxa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ihlike.m3u8.labibcxa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.mv7wJKobBQvrWUHUvO3s1mqfzyftFwKDrzmKUFd2qX8
+- name: 瑞士苏黎世1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: t8hc2ydo.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ehwfr.m3u8.cdncha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ehwfr.m3u8.cdncha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.EQvmaorpJoNss6Rd1d7sdES0LbsnDE2aTL3G1QhA2C8
+- name: 瑞士苏黎世1-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: sovdmv.m3u8.cdncha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: sovdmv.m3u8.cdncha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.EQvmaorpJoNss6Rd1d7sdES0LbsnDE2aTL3G1QhA2C8
+- name: 尼日利亚1-AN | 1x
+  type: vless
+  server: swwf8l.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: idjeg.m3u8.dvsjhbe.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: idjeg.m3u8.dvsjhbe.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.GH565UBkxYaTueDFr7xHKxEna8D0vjlFexcbkhN2sjY
+- name: 土耳其1-10Gbps-高性能-AN | 0x
+  type: vless
+  server: 0p8t3ow4.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: wiytec.m3u8.dvsjhbf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: wiytec.m3u8.dvsjhbf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.n7tyjQXrSfsXx_loRcUcdg_QIKXuqjtpLtYpepDeDgw
+- name: 土耳其1-10Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: pqlksm.m3u8.dvsjhbf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: pqlksm.m3u8.dvsjhbf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.n7tyjQXrSfsXx_loRcUcdg_QIKXuqjtpLtYpepDeDgw
+- name: 俄罗斯-圣彼得堡-10Gbps-高性能-AN | 0x
+  type: vless
+  server: sd5eazts.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: nhfpgra.m3u8.acgaruha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: nhfpgra.m3u8.acgaruha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.yxpqZ56qddndlV08_Z51Hn0bc10mL9o_H7nfrNI07wc
+- name: 俄罗斯-圣彼得堡-10Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: emhsqy.m3u8.acgaruha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: emhsqy.m3u8.acgaruha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.yxpqZ56qddndlV08_Z51Hn0bc10mL9o_H7nfrNI07wc
+- name: 德国纽伦堡1-1Gbps-高性能-AN | 0x
+  type: vless
+  server: 8vcsorj.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: nbkxnsb.m3u8.bdsfuyb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: nbkxnsb.m3u8.bdsfuyb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ZaGqVWjKe3jb2UIGhtjrHkWMyHqIEVVky-vujf0Ml2k
+- name: 德国纽伦堡1-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: wblsxk.m3u8.bdsfuyb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: wblsxk.m3u8.bdsfuyb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ZaGqVWjKe3jb2UIGhtjrHkWMyHqIEVVky-vujf0Ml2k
+- name: 德国纽伦堡2-1Gbps-高性能-AN | 0x
+  type: vless
+  server: hz4fgpvz.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kryirc.m3u8.bdsfuyc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kryirc.m3u8.bdsfuyc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.TwldTz5swYqa0JAGr8JoKJGKsMfh3xGL7fQ25VjEqH8
+- name: 德国纽伦堡2-1Gbps-高性能-中国移动优化-AN | 0x
+  type: vless
+  server: cma.causbchina.pp.ua
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: dxapgj.m3u8.bdsfuyc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: dxapgj.m3u8.bdsfuyc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.TwldTz5swYqa0JAGr8JoKJGKsMfh3xGL7fQ25VjEqH8
+- name: 加拿大多伦多1-AN | 1x
+  type: vless
+  server: pb6oklxn.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ikfrost.m3u8.bdsfuyd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ikfrost.m3u8.bdsfuyd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.e9DyokGUaG1dfbzOcOSD5DJJ321fmnLfqfOqJpuT9A0
+- name: 英国伦敦1-AN | 1x
+  type: vless
+  server: 7s0h2k.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: eydmcx.m3u8.eugbcasa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: eydmcx.m3u8.eugbcasa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.RmSMzHqMNg78GmCfSRz0nMCJqlM0NNyRALhpkBbGCHA
+- name: 英国伦敦2-AN | 1x
+  type: vless
+  server: yaesgm.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: daxev.m3u8.eugbcasb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: daxev.m3u8.eugbcasb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Htdyw4AqTq5dJAiuXXaFRT_hUvvbT09-kbX5rLGgCG8
+- name: 英国伦敦3-AN | 1x
+  type: vless
+  server: fc5gj2.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qxdwap.m3u8.eugbcasc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qxdwap.m3u8.eugbcasc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.aHf8zM7mTcnX0cYU7yL02hQMBk17IqPAmaOwXfnoDRs
+- name: 英国伦敦4-AN | 1x
+  type: vless
+  server: te8qq6.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kbnoe.m3u8.eugbcasd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kbnoe.m3u8.eugbcasd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.9sasj35wmPzIJCU8VOzRtpdqsnHJZdGgLYXvMEKeoXs
+- name: 英国伦敦5-AN | 1x
+  type: vless
+  server: 5arnqd.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: cwdeo.m3u8.eugbcase.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: cwdeo.m3u8.eugbcase.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.dRYAMuagNrGLw1mHwTJB-8gYKJYxvmYdf9apSXdO0DA
+- name: 英国伦敦6-AN | 1x
+  type: vless
+  server: r6czkl.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: eewjcy.m3u8.eugbcasf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: eewjcy.m3u8.eugbcasf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.9pmo-UeFg4Mo0j_vxCrBKOVjw6FGxl7hW6gPB3IAOSA
+- name: 西班牙1-AN | 1x
+  type: vless
+  server: pmqguk2.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: gmjuab.m3u8.afvwbxba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: gmjuab.m3u8.afvwbxba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.MUcLabxOXRi1m7_JWJ7-TPxsPFJc2le_r1jU_wpFEz4
+- name: 法国1-马赛-AN | 1x
+  type: vless
+  server: fnqfpy.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: lzvmbd.m3u8.afvwbxbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: lzvmbd.m3u8.afvwbxbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.epz5qtXYDpfVkaAQoOwamQTqLs3IZvth2uRb5hteWyY
+- name: 法国1-巴黎-AN | 1x
+  type: vless
+  server: hczkocf.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: uwpwzsg.m3u8.ssafasfauidrfha.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: uwpwzsg.m3u8.ssafasfauidrfha.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.4_EAmHUVC8AOyDhSJeU6h-a72R5KFS-iu80q99fWXxI
+- name: 法国2-巴黎-AN | 1x
+  type: vless
+  server: maacjf7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vpczpy.m3u8.ssafasfauidrfhb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vpczpy.m3u8.ssafasfauidrfhb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.WJaIfG75o4DGtk6msajpj9BNsid_vKkuPIiu3zily0o
+- name: 荷兰1-AN | 1x
+  type: vless
+  server: 7bmwf2u.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: uhfcy.m3u8.afvwbxbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: uhfcy.m3u8.afvwbxbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.URbBSxLm61cZXbHEKhc55VWFKjTvl1EouqPONGsHYR4
+- name: 荷兰2-AN | 1x
+  type: vless
+  server: nw89dqa.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qiigpfu.m3u8.afvwbxbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qiigpfu.m3u8.afvwbxbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.VUB1yXcz0izSXAkKevMKcqjSXHl9ITc5mAVzYguZiQk
+- name: 以色列1-AN | 1x
+  type: vless
+  server: jk16jvi.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qfbws.m3u8.afvwbxbe.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qfbws.m3u8.afvwbxbe.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Q7arIA2UgOQVOInpv0arYK0ad5WTpyujx2jxgxc6TS4
+- name: 以色列2-AN | 1x
+  type: vless
+  server: bgzcfwv.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: ttaqnan.m3u8.afvwbxbf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: ttaqnan.m3u8.afvwbxbf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.FJVr_ceN2wG8Za4pWcsA7LrRMjg17iv35qFzdtJ4wgU
+- name: 以色列3-AN | 1x
+  type: vless
+  server: 8iiqx4.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: mjnwqjw.m3u8.igcsa.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: mjnwqjw.m3u8.igcsa.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ip1FcYbaD1bEz24EQ-VfBM2_PAlwHEgSwlENTPSuZz8
+- name: 以色列4-AN | 1x
+  type: vless
+  server: yxijvi.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: bzmbp.m3u8.igcsb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: bzmbp.m3u8.igcsb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.J4QFOIHuR0wRJ5YIZ-QjD0d_deXySGcWVqBB72OzrTg
+- name: 墨西哥-蒙特雷1-AN | 1x
+  type: vless
+  server: 4tgk4qze.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: leatnjp.m3u8.maxsdfauba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: leatnjp.m3u8.maxsdfauba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.pIdopvo4kgjDIdQ1BMFVc9VP_MQN9aEqi2WY3gd2imw
+- name: 墨西哥-蒙特雷2-AN | 1x
+  type: vless
+  server: pshr41j.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: xiqpg.m3u8.maxsdfaubb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: xiqpg.m3u8.maxsdfaubb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.ex2872TtfnUsXRXGKBEwxfpKJDWOdt8zDofJHwIwhz8
+- name: 墨西哥-蒙特雷3-AN | 1x
+  type: vless
+  server: rk8708.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: vwewrn.m3u8.maxsdfaubc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: vwewrn.m3u8.maxsdfaubc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.dFkeftR1qIZvdbDocnfxfG2YaysEoYfGN6LX63Fh3Ac
+- name: 墨西哥-蒙特雷4-AN | 1x
+  type: vless
+  server: 78cnymx.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: nkoet.m3u8.maxsdfaubd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: nkoet.m3u8.maxsdfaubd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.yV8Oh5mrZ06PSxlDPNXHmAmvYur595wjB-jb4SGinH8
+- name: 巴西圣保罗1-AN | 1x
+  type: vless
+  server: m5labh.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: gbrhj.m3u8.bxjhsnba.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: gbrhj.m3u8.bxjhsnba.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.rYU8V3tGIEXesKnGaZejHjkltjqaNnuIKY9lT-G1bhk
+- name: 巴西圣保罗2-AN | 1x
+  type: vless
+  server: y4gptop7.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: liiwtor.m3u8.bxjhsnbb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: liiwtor.m3u8.bxjhsnbb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.TyAADPw90N6aMHrIESi92Uki2_gDclRBkpNaVNAlY2Y
+- name: 巴西圣保罗3-AN | 1x
+  type: vless
+  server: 29we1n.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qmsogqa.m3u8.bxjhsnbc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qmsogqa.m3u8.bxjhsnbc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.FiUtbdqksy_iJJ37E62dCsM_dKfvpuM5OusV-3Ds-Q4
+- name: 巴西维涅社1-AN | 1x
+  type: vless
+  server: o4byigg.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: sodyw.m3u8.bxjhsnbd.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: sodyw.m3u8.bxjhsnbd.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.zUBB6lueDuuRzVZWCTX2RWmPaA4L7CLfkaVk6C7MpA8
+- name: 巴西维涅社2-AN | 1x
+  type: vless
+  server: dslbg4.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: dytcp.m3u8.bxjhsnbe.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: dytcp.m3u8.bxjhsnbe.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.eK9lvAjRpt9XDXy4xBO_98XjpbbfaIyn7_hM-9raejg
+- name: 巴西维涅社3-AN | 1x
+  type: vless
+  server: ypgtis6.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: eoamrc.m3u8.bxjhsnbf.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: eoamrc.m3u8.bxjhsnbf.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.Zv6NTmrdYCbW5KTquHvnNKhuSryHJcHBgUUKmR1rzmU
+- name: 巴西维涅社4-AN | 1x
+  type: vless
+  server: 4r6e58gc.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: pevnt.m3u8.bxjhsnbg.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: pevnt.m3u8.bxjhsnbg.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.8aAgEjfhhJiAiqxwnL-LMlbWe32iO0IYX3uHtwg8ZVo
+- name: 南非1-AN | 1x
+  type: vless
+  server: wblodj.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: jlmvva.m3u8.nfsdabua.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: jlmvva.m3u8.nfsdabua.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.6WxSvO7Nmr7cDgrDEnmIQ59B2QH0uL1EcemXmIr_RBA
+- name: 南非2-AN | 1x
+  type: vless
+  server: uvipp3.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: diasytf.m3u8.nfsdabub.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: diasytf.m3u8.nfsdabub.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.E1OEohsbusaxctCKjq2LZ_Lbms2pPkzASFwxOI43F1Y
+- name: 南非3-AN | 1x
+  type: vless
+  server: wwl0zlsu.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: fcshu.m3u8.nfsdabuc.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: fcshu.m3u8.nfsdabuc.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.BUKf_EH1882uKBJUM1rFQkIx_DuDK4uq7bAk1F9WjlA
+- name: 南非4-AN | 1x
+  type: vless
+  server: etk2ddj.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: fyrpl.m3u8.nfsdabud.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: fyrpl.m3u8.nfsdabud.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.JcEKP3SrwgC_LM4GC5-J0kNALiNKMVzNhtr_1RsWTgI
+- name: 哥伦比亚1-AN | 0.5x
+  type: vless
+  server: hwrvs2o.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: qlcitfk.m3u8.glbyacajka.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: qlcitfk.m3u8.glbyacajka.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.S2AUM5t-b4kPoxvC_eVKGAjHH0Z_MSANqJ2JZI0Rdxs
+- name: 哥伦比亚2-AN | 0.5x
+  type: vless
+  server: 1dhy3c6.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: hcqqvn.m3u8.glbyacajkb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: hcqqvn.m3u8.glbyacajkb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.soDCe57UOiiORe1d6NKH296Ml0CHyAunYnp1IflAPAI
+- name: 智利1-AN | 0.5x
+  type: vless
+  server: ncgzceq5.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: orfin.m3u8.zhsdlca.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: orfin.m3u8.zhsdlca.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.1rtt.100-111-1111.75-0-111.50-0-3333.jZ9vls9ydXqvukN02VRNhBWTVWkRYdOpCJvZUcFV32g
+- name: 智利2-AN | 0.5x
+  type: vless
+  server: v3nlu4.tencentapp.cn
+  port: 443
+  uuid: fd45225a-e773-4674-9400-05e88ef8a4b0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: kubhhsn.m3u8.zhsdlcb.pay.uruu.cn
+  flow: xtls-rprx-vision
+  network: xhttp
+  alpn:
+  - h3
+  xhttp-opts:
+    path: "/zones"
+    mode: packet-up
+    x-padding-bytes: 100-1000
+    no-grpc-header: false
+    no-sse-header: false
+    sc-max-each-post-bytes: '1000000'
+    sc-min-posts-interval-ms: '5'
+    sc-stream-up-server-secs: 5-10
+    xmux:
+      max-concurrency: 1-2
+      max-connections: '0'
+      c-max-reuse-times: '0'
+      h-max-request-times: 3000-5000
+      h-max-reusable-secs: 7776000-10368000
+      h-keep-alive-period: 0
+    host: kubhhsn.m3u8.zhsdlcb.pay.uruu.cn
+  encryption: mlkem768x25519plus.native.0rtt.100-111-1111.75-0-111.50-0-3333.iJJWjZRxklArRnOOPJ63mUfYhEz0Vmtg28j0AQO9gnA
+proxy-groups:
+- name: Cloud
+  type: select
+  proxies:
+  - 自动选择
+  - 故障转移
+  - 剩余流量：99.07 GB
+  - 距离下次重置剩余：21 天
+  - 套餐到期：2026-05-12
+  - 英国 | 0x 导航页1：freecloud.mssg.me
+  - 无法使用-见官网教程说明
+  - 英国伦敦1-10Gbps-高性能-AN | 0x
+  - 英国伦敦1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 新加坡1-10Gbps-AN | 1x
+  - 日本东京1-10Gbps-GCORE-AN | 1x
+  - 日本东京1-AN | 1x
+  - 日本东京2-AN | 1x
+  - 日本东京3-AN | 1x
+  - 日本东京4-AN | 1x
+  - 日本大阪1-AN | 1x
+  - 日本大阪2-AN | 1x
+  - 日本大阪3-AN | 1x
+  - 日本大阪4-AN | 1x
+  - 印度尼西亚1-AN | 1x
+  - 印度尼西亚2-AN | 1x
+  - 印度尼西亚3-AN | 1x
+  - 印度尼西亚4-AN | 1x
+  - 印度-海得拉巴1-AN | 1x
+  - 印度-海得拉巴2-AN | 1x
+  - 印度-海得拉巴3-AN | 1x
+  - 印度-海得拉巴4-AN | 1x
+  - 泰国1-1Gbps-高性能-AN | 1x
+  - 越南-河内无分流直出1-AN | 1x
+  - 马来西亚1-吉隆坡-无分流直出1-AN | 1x
+  - 越南-河内无分流直出2-AN | 1x
+  - 越南-河内无分流直出3-AN | 1x
+  - 澳大利亚墨尔本1-AN | 1x
+  - 澳大利亚墨尔本2-AN | 1x
+  - 沙特阿拉伯1-AN | 1x
+  - 沙特阿拉伯2-AN | 1x
+  - 美国东部阿什本1-AN | 1x
+  - 美国东部阿什本2-AN | 1x
+  - 美国东部阿什本3-AN | 1x
+  - 美国东部阿什本4-AN | 1x
+  - 美国东部阿什本5-AN | 1x
+  - 美国东部阿什本6-AN | 1x
+  - 美国东部阿什本7-AN | 1x
+  - 美国西部圣何塞1-AN | 1x
+  - 美国西部圣何塞2-AN | 1x
+  - 美国西部圣何塞3-AN | 1x
+  - 美国西部圣何塞4-AN | 1x
+  - 美国中部芝加哥1-AN | 1x
+  - 美国中部芝加哥2-AN | 1x
+  - 美国中部芝加哥3-AN | 1x
+  - 美国中部芝加哥4-AN | 1x
+  - 美国中部芝加哥5-AN | 1x
+  - 美国中部芝加哥6-AN | 1x
+  - 美国中部芝加哥7-AN | 1x
+  - 美国中部芝加哥8-AN | 1x
+  - 美国西部洛杉矶1-1Gbps-高性能-AN | 0x
+  - 美国西部洛杉矶3-1Gbps-高性能-AN | 0x
+  - 美国南部达拉斯1-1Gbps-高性能-AN | 0x
+  - 美国东部纽约1-1Gbps-高性能-AN | 0x
+  - 美国中部犹他州1-2Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-中国移动优化-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-中国移动优化-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-中国移动优化-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 尼日利亚1-AN | 1x
+  - 土耳其1-10Gbps-高性能-AN | 0x
+  - 土耳其1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-中国移动优化-AN | 0x
+  - 加拿大多伦多1-AN | 1x
+  - 英国伦敦1-AN | 1x
+  - 英国伦敦2-AN | 1x
+  - 英国伦敦3-AN | 1x
+  - 英国伦敦4-AN | 1x
+  - 英国伦敦5-AN | 1x
+  - 英国伦敦6-AN | 1x
+  - 西班牙1-AN | 1x
+  - 法国1-马赛-AN | 1x
+  - 法国1-巴黎-AN | 1x
+  - 法国2-巴黎-AN | 1x
+  - 荷兰1-AN | 1x
+  - 荷兰2-AN | 1x
+  - 以色列1-AN | 1x
+  - 以色列2-AN | 1x
+  - 以色列3-AN | 1x
+  - 以色列4-AN | 1x
+  - 墨西哥-蒙特雷1-AN | 1x
+  - 墨西哥-蒙特雷2-AN | 1x
+  - 墨西哥-蒙特雷3-AN | 1x
+  - 墨西哥-蒙特雷4-AN | 1x
+  - 巴西圣保罗1-AN | 1x
+  - 巴西圣保罗2-AN | 1x
+  - 巴西圣保罗3-AN | 1x
+  - 巴西维涅社1-AN | 1x
+  - 巴西维涅社2-AN | 1x
+  - 巴西维涅社3-AN | 1x
+  - 巴西维涅社4-AN | 1x
+  - 南非1-AN | 1x
+  - 南非2-AN | 1x
+  - 南非3-AN | 1x
+  - 南非4-AN | 1x
+  - 哥伦比亚1-AN | 0.5x
+  - 哥伦比亚2-AN | 0.5x
+  - 智利1-AN | 0.5x
+  - 智利2-AN | 0.5x
+- name: 自动选择
+  type: url-test
+  proxies:
+  - 剩余流量：99.07 GB
+  - 距离下次重置剩余：21 天
+  - 套餐到期：2026-05-12
+  - 英国 | 0x 导航页1：freecloud.mssg.me
+  - 无法使用-见官网教程说明
+  - 英国伦敦1-10Gbps-高性能-AN | 0x
+  - 英国伦敦1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 新加坡1-10Gbps-AN | 1x
+  - 日本东京1-10Gbps-GCORE-AN | 1x
+  - 日本东京1-AN | 1x
+  - 日本东京2-AN | 1x
+  - 日本东京3-AN | 1x
+  - 日本东京4-AN | 1x
+  - 日本大阪1-AN | 1x
+  - 日本大阪2-AN | 1x
+  - 日本大阪3-AN | 1x
+  - 日本大阪4-AN | 1x
+  - 印度尼西亚1-AN | 1x
+  - 印度尼西亚2-AN | 1x
+  - 印度尼西亚3-AN | 1x
+  - 印度尼西亚4-AN | 1x
+  - 印度-海得拉巴1-AN | 1x
+  - 印度-海得拉巴2-AN | 1x
+  - 印度-海得拉巴3-AN | 1x
+  - 印度-海得拉巴4-AN | 1x
+  - 泰国1-1Gbps-高性能-AN | 1x
+  - 越南-河内无分流直出1-AN | 1x
+  - 马来西亚1-吉隆坡-无分流直出1-AN | 1x
+  - 越南-河内无分流直出2-AN | 1x
+  - 越南-河内无分流直出3-AN | 1x
+  - 澳大利亚墨尔本1-AN | 1x
+  - 澳大利亚墨尔本2-AN | 1x
+  - 沙特阿拉伯1-AN | 1x
+  - 沙特阿拉伯2-AN | 1x
+  - 美国东部阿什本1-AN | 1x
+  - 美国东部阿什本2-AN | 1x
+  - 美国东部阿什本3-AN | 1x
+  - 美国东部阿什本4-AN | 1x
+  - 美国东部阿什本5-AN | 1x
+  - 美国东部阿什本6-AN | 1x
+  - 美国东部阿什本7-AN | 1x
+  - 美国西部圣何塞1-AN | 1x
+  - 美国西部圣何塞2-AN | 1x
+  - 美国西部圣何塞3-AN | 1x
+  - 美国西部圣何塞4-AN | 1x
+  - 美国中部芝加哥1-AN | 1x
+  - 美国中部芝加哥2-AN | 1x
+  - 美国中部芝加哥3-AN | 1x
+  - 美国中部芝加哥4-AN | 1x
+  - 美国中部芝加哥5-AN | 1x
+  - 美国中部芝加哥6-AN | 1x
+  - 美国中部芝加哥7-AN | 1x
+  - 美国中部芝加哥8-AN | 1x
+  - 美国西部洛杉矶1-1Gbps-高性能-AN | 0x
+  - 美国西部洛杉矶3-1Gbps-高性能-AN | 0x
+  - 美国南部达拉斯1-1Gbps-高性能-AN | 0x
+  - 美国东部纽约1-1Gbps-高性能-AN | 0x
+  - 美国中部犹他州1-2Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-中国移动优化-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-中国移动优化-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-中国移动优化-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 尼日利亚1-AN | 1x
+  - 土耳其1-10Gbps-高性能-AN | 0x
+  - 土耳其1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-中国移动优化-AN | 0x
+  - 加拿大多伦多1-AN | 1x
+  - 英国伦敦1-AN | 1x
+  - 英国伦敦2-AN | 1x
+  - 英国伦敦3-AN | 1x
+  - 英国伦敦4-AN | 1x
+  - 英国伦敦5-AN | 1x
+  - 英国伦敦6-AN | 1x
+  - 西班牙1-AN | 1x
+  - 法国1-马赛-AN | 1x
+  - 法国1-巴黎-AN | 1x
+  - 法国2-巴黎-AN | 1x
+  - 荷兰1-AN | 1x
+  - 荷兰2-AN | 1x
+  - 以色列1-AN | 1x
+  - 以色列2-AN | 1x
+  - 以色列3-AN | 1x
+  - 以色列4-AN | 1x
+  - 墨西哥-蒙特雷1-AN | 1x
+  - 墨西哥-蒙特雷2-AN | 1x
+  - 墨西哥-蒙特雷3-AN | 1x
+  - 墨西哥-蒙特雷4-AN | 1x
+  - 巴西圣保罗1-AN | 1x
+  - 巴西圣保罗2-AN | 1x
+  - 巴西圣保罗3-AN | 1x
+  - 巴西维涅社1-AN | 1x
+  - 巴西维涅社2-AN | 1x
+  - 巴西维涅社3-AN | 1x
+  - 巴西维涅社4-AN | 1x
+  - 南非1-AN | 1x
+  - 南非2-AN | 1x
+  - 南非3-AN | 1x
+  - 南非4-AN | 1x
+  - 哥伦比亚1-AN | 0.5x
+  - 哥伦比亚2-AN | 0.5x
+  - 智利1-AN | 0.5x
+  - 智利2-AN | 0.5x
+  url: http://www.gstatic.com/generate_204
+  interval: 86400
+- name: 故障转移
+  type: fallback
+  proxies:
+  - 剩余流量：99.07 GB
+  - 距离下次重置剩余：21 天
+  - 套餐到期：2026-05-12
+  - 英国 | 0x 导航页1：freecloud.mssg.me
+  - 无法使用-见官网教程说明
+  - 英国伦敦1-10Gbps-高性能-AN | 0x
+  - 英国伦敦1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 新加坡1-10Gbps-AN | 1x
+  - 日本东京1-10Gbps-GCORE-AN | 1x
+  - 日本东京1-AN | 1x
+  - 日本东京2-AN | 1x
+  - 日本东京3-AN | 1x
+  - 日本东京4-AN | 1x
+  - 日本大阪1-AN | 1x
+  - 日本大阪2-AN | 1x
+  - 日本大阪3-AN | 1x
+  - 日本大阪4-AN | 1x
+  - 印度尼西亚1-AN | 1x
+  - 印度尼西亚2-AN | 1x
+  - 印度尼西亚3-AN | 1x
+  - 印度尼西亚4-AN | 1x
+  - 印度-海得拉巴1-AN | 1x
+  - 印度-海得拉巴2-AN | 1x
+  - 印度-海得拉巴3-AN | 1x
+  - 印度-海得拉巴4-AN | 1x
+  - 泰国1-1Gbps-高性能-AN | 1x
+  - 越南-河内无分流直出1-AN | 1x
+  - 马来西亚1-吉隆坡-无分流直出1-AN | 1x
+  - 越南-河内无分流直出2-AN | 1x
+  - 越南-河内无分流直出3-AN | 1x
+  - 澳大利亚墨尔本1-AN | 1x
+  - 澳大利亚墨尔本2-AN | 1x
+  - 沙特阿拉伯1-AN | 1x
+  - 沙特阿拉伯2-AN | 1x
+  - 美国东部阿什本1-AN | 1x
+  - 美国东部阿什本2-AN | 1x
+  - 美国东部阿什本3-AN | 1x
+  - 美国东部阿什本4-AN | 1x
+  - 美国东部阿什本5-AN | 1x
+  - 美国东部阿什本6-AN | 1x
+  - 美国东部阿什本7-AN | 1x
+  - 美国西部圣何塞1-AN | 1x
+  - 美国西部圣何塞2-AN | 1x
+  - 美国西部圣何塞3-AN | 1x
+  - 美国西部圣何塞4-AN | 1x
+  - 美国中部芝加哥1-AN | 1x
+  - 美国中部芝加哥2-AN | 1x
+  - 美国中部芝加哥3-AN | 1x
+  - 美国中部芝加哥4-AN | 1x
+  - 美国中部芝加哥5-AN | 1x
+  - 美国中部芝加哥6-AN | 1x
+  - 美国中部芝加哥7-AN | 1x
+  - 美国中部芝加哥8-AN | 1x
+  - 美国西部洛杉矶1-1Gbps-高性能-AN | 0x
+  - 美国西部洛杉矶3-1Gbps-高性能-AN | 0x
+  - 美国南部达拉斯1-1Gbps-高性能-AN | 0x
+  - 美国东部纽约1-1Gbps-高性能-AN | 0x
+  - 美国中部犹他州1-2Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-AN | 0x
+  - 爱尔兰1-都柏林-1Gbps-高性能-中国移动优化-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-AN | 0x
+  - 罗马尼亚1-BT-PT-矿池-1Gbps-高性能-中国移动优化-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-AN | 0x
+  - 意大利OVH-0.5Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-AN | 0x
+  - 荷兰南部林堡省2-10Gbps-高性能-中国移动优化-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-AN | 0x
+  - 瑞士苏黎世1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 尼日利亚1-AN | 1x
+  - 土耳其1-10Gbps-高性能-AN | 0x
+  - 土耳其1-10Gbps-高性能-中国移动优化-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-AN | 0x
+  - 俄罗斯-圣彼得堡-10Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡1-1Gbps-高性能-中国移动优化-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-AN | 0x
+  - 德国纽伦堡2-1Gbps-高性能-中国移动优化-AN | 0x
+  - 加拿大多伦多1-AN | 1x
+  - 英国伦敦1-AN | 1x
+  - 英国伦敦2-AN | 1x
+  - 英国伦敦3-AN | 1x
+  - 英国伦敦4-AN | 1x
+  - 英国伦敦5-AN | 1x
+  - 英国伦敦6-AN | 1x
+  - 西班牙1-AN | 1x
+  - 法国1-马赛-AN | 1x
+  - 法国1-巴黎-AN | 1x
+  - 法国2-巴黎-AN | 1x
+  - 荷兰1-AN | 1x
+  - 荷兰2-AN | 1x
+  - 以色列1-AN | 1x
+  - 以色列2-AN | 1x
+  - 以色列3-AN | 1x
+  - 以色列4-AN | 1x
+  - 墨西哥-蒙特雷1-AN | 1x
+  - 墨西哥-蒙特雷2-AN | 1x
+  - 墨西哥-蒙特雷3-AN | 1x
+  - 墨西哥-蒙特雷4-AN | 1x
+  - 巴西圣保罗1-AN | 1x
+  - 巴西圣保罗2-AN | 1x
+  - 巴西圣保罗3-AN | 1x
+  - 巴西维涅社1-AN | 1x
+  - 巴西维涅社2-AN | 1x
+  - 巴西维涅社3-AN | 1x
+  - 巴西维涅社4-AN | 1x
+  - 南非1-AN | 1x
+  - 南非2-AN | 1x
+  - 南非3-AN | 1x
+  - 南非4-AN | 1x
+  - 哥伦比亚1-AN | 0.5x
+  - 哥伦比亚2-AN | 0.5x
+  - 智利1-AN | 0.5x
+  - 智利2-AN | 0.5x
+  url: http://www.gstatic.com/generate_204
+  interval: 7200
+rules:
+- IP-CIDR,1.1.1.1/32,Cloud,no-resolve
+- IP-CIDR,8.8.8.8/32,Cloud,no-resolve
+- DOMAIN-SUFFIX,services.googleapis.cn,Cloud
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Cloud
+- DOMAIN,safebrowsing.urlsec.qq.com,DIRECT
+- DOMAIN,safebrowsing.googleapis.com,DIRECT
+- DOMAIN,developer.apple.com,Cloud
+- DOMAIN-SUFFIX,digicert.com,Cloud
+- DOMAIN,ocsp.apple.com,Cloud
+- DOMAIN,ocsp.comodoca.com,Cloud
+- DOMAIN,ocsp.usertrust.com,Cloud
+- DOMAIN,ocsp.sectigo.com,Cloud
+- DOMAIN,ocsp.verisign.net,Cloud
+- DOMAIN-SUFFIX,apple-dns.net,Cloud
+- DOMAIN,testflight.apple.com,Cloud
+- DOMAIN,sandbox.itunes.apple.com,Cloud
+- DOMAIN,itunes.apple.com,Cloud
+- DOMAIN-SUFFIX,apps.apple.com,Cloud
+- DOMAIN-SUFFIX,blobstore.apple.com,Cloud
+- DOMAIN,cvws.icloud-content.com,Cloud
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-SUFFIX,itunes.apple.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,cdn20.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN-SUFFIX,akadns.net,DIRECT
+- DOMAIN-SUFFIX,akamaiedge.net,DIRECT
+- DOMAIN-SUFFIX,edgekey.net,DIRECT
+- DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT
+- DOMAIN-SUFFIX,mwcname.com,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+- DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+- DOMAIN,cn.bing.com,DIRECT
+- DOMAIN-SUFFIX,126.com,DIRECT
+- DOMAIN-SUFFIX,126.net,DIRECT
+- DOMAIN-SUFFIX,127.net,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,360buyimg.com,DIRECT
+- DOMAIN-SUFFIX,36kr.com,DIRECT
+- DOMAIN-SUFFIX,acfun.tv,DIRECT
+- DOMAIN-SUFFIX,air-matters.com,DIRECT
+- DOMAIN-SUFFIX,aixifan.com,DIRECT
+- DOMAIN-KEYWORD,alicdn,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-SUFFIX,amap.com,DIRECT
+- DOMAIN-SUFFIX,autonavi.com,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-SUFFIX,bdimg.com,DIRECT
+- DOMAIN-SUFFIX,bdstatic.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,bilivideo.com,DIRECT
+- DOMAIN-SUFFIX,caiyunapp.com,DIRECT
+- DOMAIN-SUFFIX,clouddn.com,DIRECT
+- DOMAIN-SUFFIX,cnbeta.com,DIRECT
+- DOMAIN-SUFFIX,cnbetacdn.com,DIRECT
+- DOMAIN-SUFFIX,cootekservice.com,DIRECT
+- DOMAIN-SUFFIX,csdn.net,DIRECT
+- DOMAIN-SUFFIX,ctrip.com,DIRECT
+- DOMAIN-SUFFIX,dgtle.com,DIRECT
+- DOMAIN-SUFFIX,dianping.com,DIRECT
+- DOMAIN-SUFFIX,douban.com,DIRECT
+- DOMAIN-SUFFIX,doubanio.com,DIRECT
+- DOMAIN-SUFFIX,duokan.com,DIRECT
+- DOMAIN-SUFFIX,easou.com,DIRECT
+- DOMAIN-SUFFIX,ele.me,DIRECT
+- DOMAIN-SUFFIX,feng.com,DIRECT
+- DOMAIN-SUFFIX,fir.im,DIRECT
+- DOMAIN-SUFFIX,frdic.com,DIRECT
+- DOMAIN-SUFFIX,g-cores.com,DIRECT
+- DOMAIN-SUFFIX,godic.net,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN,cdn.hockeyapp.net,DIRECT
+- DOMAIN-SUFFIX,hongxiu.com,DIRECT
+- DOMAIN-SUFFIX,hxcdn.net,DIRECT
+- DOMAIN-SUFFIX,iciba.com,DIRECT
+- DOMAIN-SUFFIX,ifeng.com,DIRECT
+- DOMAIN-SUFFIX,ifengimg.com,DIRECT
+- DOMAIN-SUFFIX,ipip.net,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,jianshu.com,DIRECT
+- DOMAIN-SUFFIX,knewone.com,DIRECT
+- DOMAIN-SUFFIX,le.com,DIRECT
+- DOMAIN-SUFFIX,lecloud.com,DIRECT
+- DOMAIN-SUFFIX,lemicp.com,DIRECT
+- DOMAIN-SUFFIX,licdn.com,DIRECT
+- DOMAIN-SUFFIX,luoo.net,DIRECT
+- DOMAIN-SUFFIX,meituan.com,DIRECT
+- DOMAIN-SUFFIX,meituan.net,DIRECT
+- DOMAIN-SUFFIX,mi.com,DIRECT
+- DOMAIN-SUFFIX,miaopai.com,DIRECT
+- DOMAIN-SUFFIX,microsoft.com,DIRECT
+- DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+- DOMAIN-SUFFIX,miui.com,DIRECT
+- DOMAIN-SUFFIX,miwifi.com,DIRECT
+- DOMAIN-SUFFIX,mob.com,DIRECT
+- DOMAIN-SUFFIX,netease.com,DIRECT
+- DOMAIN-SUFFIX,office.com,DIRECT
+- DOMAIN-SUFFIX,office365.com,DIRECT
+- DOMAIN-KEYWORD,officecdn,DIRECT
+- DOMAIN-SUFFIX,oschina.net,DIRECT
+- DOMAIN-SUFFIX,ppsimg.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,qcloud.com,DIRECT
+- DOMAIN-SUFFIX,qdaily.com,DIRECT
+- DOMAIN-SUFFIX,qdmm.com,DIRECT
+- DOMAIN-SUFFIX,qhimg.com,DIRECT
+- DOMAIN-SUFFIX,qhres.com,DIRECT
+- DOMAIN-SUFFIX,qidian.com,DIRECT
+- DOMAIN-SUFFIX,qihucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiniu.com,DIRECT
+- DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiyipic.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,qqurl.com,DIRECT
+- DOMAIN-SUFFIX,rarbg.to,DIRECT
+- DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+- DOMAIN-SUFFIX,segmentfault.com,DIRECT
+- DOMAIN-SUFFIX,sinaapp.com,DIRECT
+- DOMAIN-SUFFIX,smzdm.com,DIRECT
+- DOMAIN-SUFFIX,snapdrop.net,DIRECT
+- DOMAIN-SUFFIX,sogou.com,DIRECT
+- DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+- DOMAIN-SUFFIX,sohu.com,DIRECT
+- DOMAIN-SUFFIX,soku.com,DIRECT
+- DOMAIN-SUFFIX,speedtest.net,DIRECT
+- DOMAIN-SUFFIX,sspai.com,DIRECT
+- DOMAIN-SUFFIX,suning.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,tianyancha.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tudou.com,DIRECT
+- DOMAIN-SUFFIX,umetrip.com,DIRECT
+- DOMAIN-SUFFIX,upaiyun.com,DIRECT
+- DOMAIN-SUFFIX,upyun.com,DIRECT
+- DOMAIN-SUFFIX,veryzhun.com,DIRECT
+- DOMAIN-SUFFIX,weather.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,xiami.com,DIRECT
+- DOMAIN-SUFFIX,xiami.net,DIRECT
+- DOMAIN-SUFFIX,xiaomicp.com,DIRECT
+- DOMAIN-SUFFIX,ximalaya.com,DIRECT
+- DOMAIN-SUFFIX,xmcdn.com,DIRECT
+- DOMAIN-SUFFIX,xunlei.com,DIRECT
+- DOMAIN-SUFFIX,yhd.com,DIRECT
+- DOMAIN-SUFFIX,yihaodianimg.com,DIRECT
+- DOMAIN-SUFFIX,yinxiang.com,DIRECT
+- DOMAIN-SUFFIX,ykimg.com,DIRECT
+- DOMAIN-SUFFIX,youdao.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,zealer.com,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,zhimg.com,DIRECT
+- DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+- DOMAIN-SUFFIX,zoho.com,DIRECT
+- DOMAIN-KEYWORD,amazon,Cloud
+- DOMAIN-KEYWORD,google,Cloud
+- DOMAIN-KEYWORD,gmail,Cloud
+- DOMAIN-KEYWORD,youtube,Cloud
+- DOMAIN-KEYWORD,facebook,Cloud
+- DOMAIN-SUFFIX,fb.me,Cloud
+- DOMAIN-SUFFIX,fbcdn.net,Cloud
+- DOMAIN-KEYWORD,twitter,Cloud
+- DOMAIN-KEYWORD,instagram,Cloud
+- DOMAIN-KEYWORD,dropbox,Cloud
+- DOMAIN-SUFFIX,twimg.com,Cloud
+- DOMAIN-KEYWORD,blogspot,Cloud
+- DOMAIN-SUFFIX,youtu.be,Cloud
+- DOMAIN-KEYWORD,whatsapp,Cloud
+- DOMAIN-KEYWORD,admarvel,REJECT
+- DOMAIN-KEYWORD,admaster,REJECT
+- DOMAIN-KEYWORD,adsage,REJECT
+- DOMAIN-KEYWORD,adsmogo,REJECT
+- DOMAIN-KEYWORD,adsrvmedia,REJECT
+- DOMAIN-KEYWORD,adwords,REJECT
+- DOMAIN-KEYWORD,adservice,REJECT
+- DOMAIN-SUFFIX,appsflyer.com,REJECT
+- DOMAIN-KEYWORD,domob,REJECT
+- DOMAIN-SUFFIX,doubleclick.net,REJECT
+- DOMAIN-KEYWORD,duomeng,REJECT
+- DOMAIN-KEYWORD,dwtrack,REJECT
+- DOMAIN-KEYWORD,guanggao,REJECT
+- DOMAIN-KEYWORD,lianmeng,REJECT
+- DOMAIN-SUFFIX,mmstat.com,REJECT
+- DOMAIN-KEYWORD,mopub,REJECT
+- DOMAIN-KEYWORD,omgmta,REJECT
+- DOMAIN-KEYWORD,openx,REJECT
+- DOMAIN-KEYWORD,partnerad,REJECT
+- DOMAIN-KEYWORD,pingfore,REJECT
+- DOMAIN-KEYWORD,supersonicads,REJECT
+- DOMAIN-KEYWORD,uedas,REJECT
+- DOMAIN-KEYWORD,umeng,REJECT
+- DOMAIN-KEYWORD,usage,REJECT
+- DOMAIN-SUFFIX,vungle.com,REJECT
+- DOMAIN-KEYWORD,wlmonitor,REJECT
+- DOMAIN-KEYWORD,zjtoolbar,REJECT
+- DOMAIN-KEYWORD,copilot,Cloud
+- DOMAIN-SUFFIX,9to5mac.com,Cloud
+- DOMAIN-SUFFIX,abpchina.org,Cloud
+- DOMAIN-SUFFIX,adblockplus.org,Cloud
+- DOMAIN-SUFFIX,adobe.com,Cloud
+- DOMAIN-SUFFIX,akamaized.net,Cloud
+- DOMAIN-SUFFIX,alfredapp.com,Cloud
+- DOMAIN-SUFFIX,amplitude.com,Cloud
+- DOMAIN-SUFFIX,ampproject.org,Cloud
+- DOMAIN-SUFFIX,android.com,Cloud
+- DOMAIN-SUFFIX,angularjs.org,Cloud
+- DOMAIN-SUFFIX,aolcdn.com,Cloud
+- DOMAIN-SUFFIX,apkpure.com,Cloud
+- DOMAIN-SUFFIX,appledaily.com,Cloud
+- DOMAIN-SUFFIX,appshopper.com,Cloud
+- DOMAIN-SUFFIX,appspot.com,Cloud
+- DOMAIN-SUFFIX,arcgis.com,Cloud
+- DOMAIN-SUFFIX,archive.org,Cloud
+- DOMAIN-SUFFIX,armorgames.com,Cloud
+- DOMAIN-SUFFIX,aspnetcdn.com,Cloud
+- DOMAIN-SUFFIX,att.com,Cloud
+- DOMAIN-SUFFIX,awsstatic.com,Cloud
+- DOMAIN-SUFFIX,azureedge.net,Cloud
+- DOMAIN-SUFFIX,azurewebsites.net,Cloud
+- DOMAIN-SUFFIX,bing.com,Cloud
+- DOMAIN-SUFFIX,bintray.com,Cloud
+- DOMAIN-SUFFIX,bit.com,Cloud
+- DOMAIN-SUFFIX,bit.ly,Cloud
+- DOMAIN-SUFFIX,bitbucket.org,Cloud
+- DOMAIN-SUFFIX,bjango.com,Cloud
+- DOMAIN-SUFFIX,bkrtx.com,Cloud
+- DOMAIN-SUFFIX,blog.com,Cloud
+- DOMAIN-SUFFIX,blogcdn.com,Cloud
+- DOMAIN-SUFFIX,blogger.com,Cloud
+- DOMAIN-SUFFIX,blogsmithmedia.com,Cloud
+- DOMAIN-SUFFIX,blogspot.com,Cloud
+- DOMAIN-SUFFIX,blogspot.hk,Cloud
+- DOMAIN-SUFFIX,bloomberg.com,Cloud
+- DOMAIN-SUFFIX,box.com,Cloud
+- DOMAIN-SUFFIX,box.net,Cloud
+- DOMAIN-SUFFIX,cachefly.net,Cloud
+- DOMAIN-SUFFIX,chromium.org,Cloud
+- DOMAIN-SUFFIX,cl.ly,Cloud
+- DOMAIN-SUFFIX,cloudflare.com,Cloud
+- DOMAIN-SUFFIX,cloudfront.net,Cloud
+- DOMAIN-SUFFIX,cloudmagic.com,Cloud
+- DOMAIN-SUFFIX,cmail19.com,Cloud
+- DOMAIN-SUFFIX,cnet.com,Cloud
+- DOMAIN-SUFFIX,cocoapods.org,Cloud
+- DOMAIN-SUFFIX,comodoca.com,Cloud
+- DOMAIN-SUFFIX,crashlytics.com,Cloud
+- DOMAIN-SUFFIX,culturedcode.com,Cloud
+- DOMAIN-SUFFIX,d.pr,Cloud
+- DOMAIN-SUFFIX,danilo.to,Cloud
+- DOMAIN-SUFFIX,dayone.me,Cloud
+- DOMAIN-SUFFIX,db.tt,Cloud
+- DOMAIN-SUFFIX,deskconnect.com,Cloud
+- DOMAIN-SUFFIX,disq.us,Cloud
+- DOMAIN-SUFFIX,disqus.com,Cloud
+- DOMAIN-SUFFIX,disquscdn.com,Cloud
+- DOMAIN-SUFFIX,dnsimple.com,Cloud
+- DOMAIN-SUFFIX,docker.com,Cloud
+- DOMAIN-SUFFIX,dribbble.com,Cloud
+- DOMAIN-SUFFIX,droplr.com,Cloud
+- DOMAIN-SUFFIX,duckduckgo.com,Cloud
+- DOMAIN-SUFFIX,dueapp.com,Cloud
+- DOMAIN-SUFFIX,dytt8.net,Cloud
+- DOMAIN-SUFFIX,edgecastcdn.net,Cloud
+- DOMAIN-SUFFIX,edgekey.net,Cloud
+- DOMAIN-SUFFIX,edgesuite.net,Cloud
+- DOMAIN-SUFFIX,engadget.com,Cloud
+- DOMAIN-SUFFIX,entrust.net,Cloud
+- DOMAIN-SUFFIX,eurekavpt.com,Cloud
+- DOMAIN-SUFFIX,evernote.com,Cloud
+- DOMAIN-SUFFIX,fabric.io,Cloud
+- DOMAIN-SUFFIX,fast.com,Cloud
+- DOMAIN-SUFFIX,fastly.net,Cloud
+- DOMAIN-SUFFIX,fc2.com,Cloud
+- DOMAIN-SUFFIX,feedburner.com,Cloud
+- DOMAIN-SUFFIX,feedly.com,Cloud
+- DOMAIN-SUFFIX,feedsportal.com,Cloud
+- DOMAIN-SUFFIX,fiftythree.com,Cloud
+- DOMAIN-SUFFIX,firebaseio.com,Cloud
+- DOMAIN-SUFFIX,flexibits.com,Cloud
+- DOMAIN-SUFFIX,flickr.com,Cloud
+- DOMAIN-SUFFIX,flipboard.com,Cloud
+- DOMAIN-SUFFIX,g.co,Cloud
+- DOMAIN-SUFFIX,gabia.net,Cloud
+- DOMAIN-SUFFIX,geni.us,Cloud
+- DOMAIN-SUFFIX,gfx.ms,Cloud
+- DOMAIN-SUFFIX,ggpht.com,Cloud
+- DOMAIN-SUFFIX,ghostnoteapp.com,Cloud
+- DOMAIN-SUFFIX,git.io,Cloud
+- DOMAIN-KEYWORD,github,Cloud
+- DOMAIN-SUFFIX,globalsign.com,Cloud
+- DOMAIN-SUFFIX,gmodules.com,Cloud
+- DOMAIN-SUFFIX,godaddy.com,Cloud
+- DOMAIN-SUFFIX,golang.org,Cloud
+- DOMAIN-SUFFIX,gongm.in,Cloud
+- DOMAIN-SUFFIX,goo.gl,Cloud
+- DOMAIN-SUFFIX,goodreaders.com,Cloud
+- DOMAIN-SUFFIX,goodreads.com,Cloud
+- DOMAIN-SUFFIX,gravatar.com,Cloud
+- DOMAIN-SUFFIX,gstatic.com,Cloud
+- DOMAIN-SUFFIX,gvt0.com,Cloud
+- DOMAIN-SUFFIX,hockeyapp.net,Cloud
+- DOMAIN-SUFFIX,hotmail.com,Cloud
+- DOMAIN-SUFFIX,icons8.com,Cloud
+- DOMAIN-SUFFIX,ifixit.com,Cloud
+- DOMAIN-SUFFIX,ift.tt,Cloud
+- DOMAIN-SUFFIX,ifttt.com,Cloud
+- DOMAIN-SUFFIX,iherb.com,Cloud
+- DOMAIN-SUFFIX,imageshack.us,Cloud
+- DOMAIN-SUFFIX,img.ly,Cloud
+- DOMAIN-SUFFIX,imgur.com,Cloud
+- DOMAIN-SUFFIX,imore.com,Cloud
+- DOMAIN-SUFFIX,instapaper.com,Cloud
+- DOMAIN-SUFFIX,ipn.li,Cloud
+- DOMAIN-SUFFIX,is.gd,Cloud
+- DOMAIN-SUFFIX,issuu.com,Cloud
+- DOMAIN-SUFFIX,itgonglun.com,Cloud
+- DOMAIN-SUFFIX,itun.es,Cloud
+- DOMAIN-SUFFIX,ixquick.com,Cloud
+- DOMAIN-SUFFIX,j.mp,Cloud
+- DOMAIN-SUFFIX,js.revsci.net,Cloud
+- DOMAIN-SUFFIX,jshint.com,Cloud
+- DOMAIN-SUFFIX,jtvnw.net,Cloud
+- DOMAIN-SUFFIX,justgetflux.com,Cloud
+- DOMAIN-SUFFIX,kat.cr,Cloud
+- DOMAIN-SUFFIX,klip.me,Cloud
+- DOMAIN-SUFFIX,libsyn.com,Cloud
+- DOMAIN-SUFFIX,linkedin.com,Cloud
+- DOMAIN-SUFFIX,line-apps.com,Cloud
+- DOMAIN-SUFFIX,linode.com,Cloud
+- DOMAIN-SUFFIX,lithium.com,Cloud
+- DOMAIN-SUFFIX,littlehj.com,Cloud
+- DOMAIN-SUFFIX,live.com,Cloud
+- DOMAIN-SUFFIX,live.net,Cloud
+- DOMAIN-SUFFIX,livefilestore.com,Cloud
+- DOMAIN-SUFFIX,llnwd.net,Cloud
+- DOMAIN-SUFFIX,macid.co,Cloud
+- DOMAIN-SUFFIX,macromedia.com,Cloud
+- DOMAIN-SUFFIX,macrumors.com,Cloud
+- DOMAIN-SUFFIX,mashable.com,Cloud
+- DOMAIN-SUFFIX,mathjax.org,Cloud
+- DOMAIN-SUFFIX,medium.com,Cloud
+- DOMAIN-SUFFIX,mega.co.nz,Cloud
+- DOMAIN-SUFFIX,mega.nz,Cloud
+- DOMAIN-SUFFIX,megaupload.com,Cloud
+- DOMAIN-SUFFIX,microsofttranslator.com,Cloud
+- DOMAIN-SUFFIX,mindnode.com,Cloud
+- DOMAIN-SUFFIX,mobile01.com,Cloud
+- DOMAIN-SUFFIX,modmyi.com,Cloud
+- DOMAIN-SUFFIX,msedge.net,Cloud
+- DOMAIN-SUFFIX,myfontastic.com,Cloud
+- DOMAIN-SUFFIX,name.com,Cloud
+- DOMAIN-SUFFIX,nextmedia.com,Cloud
+- DOMAIN-SUFFIX,nsstatic.net,Cloud
+- DOMAIN-SUFFIX,nssurge.com,Cloud
+- DOMAIN-SUFFIX,nyt.com,Cloud
+- DOMAIN-SUFFIX,nytimes.com,Cloud
+- DOMAIN-SUFFIX,omnigroup.com,Cloud
+- DOMAIN-SUFFIX,onedrive.com,Cloud
+- DOMAIN-SUFFIX,onenote.com,Cloud
+- DOMAIN-SUFFIX,ooyala.com,Cloud
+- DOMAIN-SUFFIX,openvpn.net,Cloud
+- DOMAIN-SUFFIX,openwrt.org,Cloud
+- DOMAIN-SUFFIX,orkut.com,Cloud
+- DOMAIN-SUFFIX,osxdaily.com,Cloud
+- DOMAIN-SUFFIX,outlook.com,Cloud
+- DOMAIN-SUFFIX,ow.ly,Cloud
+- DOMAIN-SUFFIX,paddleapi.com,Cloud
+- DOMAIN-SUFFIX,parallels.com,Cloud
+- DOMAIN-SUFFIX,parse.com,Cloud
+- DOMAIN-SUFFIX,pdfexpert.com,Cloud
+- DOMAIN-SUFFIX,periscope.tv,Cloud
+- DOMAIN-SUFFIX,pinboard.in,Cloud
+- DOMAIN-SUFFIX,pinterest.com,Cloud
+- DOMAIN-SUFFIX,pixelmator.com,Cloud
+- DOMAIN-SUFFIX,pixiv.net,Cloud
+- DOMAIN-SUFFIX,playpcesor.com,Cloud
+- DOMAIN-SUFFIX,playstation.com,Cloud
+- DOMAIN-SUFFIX,playstation.com.hk,Cloud
+- DOMAIN-SUFFIX,playstation.net,Cloud
+- DOMAIN-SUFFIX,playstationnetwork.com,Cloud
+- DOMAIN-SUFFIX,pushwoosh.com,Cloud
+- DOMAIN-SUFFIX,rime.im,Cloud
+- DOMAIN-SUFFIX,servebom.com,Cloud
+- DOMAIN-SUFFIX,sfx.ms,Cloud
+- DOMAIN-SUFFIX,shadowsocks.org,Cloud
+- DOMAIN-SUFFIX,sharethis.com,Cloud
+- DOMAIN-SUFFIX,shazam.com,Cloud
+- DOMAIN-SUFFIX,skype.com,Cloud
+- DOMAIN-SUFFIX,smartdnsCloud.com,Cloud
+- DOMAIN-SUFFIX,smartmailcloud.com,Cloud
+- DOMAIN-SUFFIX,sndcdn.com,Cloud
+- DOMAIN-SUFFIX,sony.com,Cloud
+- DOMAIN-SUFFIX,soundcloud.com,Cloud
+- DOMAIN-SUFFIX,sourceforge.net,Cloud
+- DOMAIN-SUFFIX,spotify.com,Cloud
+- DOMAIN-SUFFIX,squarespace.com,Cloud
+- DOMAIN-SUFFIX,sstatic.net,Cloud
+- DOMAIN-SUFFIX,st.luluku.pw,Cloud
+- DOMAIN-SUFFIX,stackoverflow.com,Cloud
+- DOMAIN-SUFFIX,startpage.com,Cloud
+- DOMAIN-SUFFIX,staticflickr.com,Cloud
+- DOMAIN-SUFFIX,steamcommunity.com,Cloud
+- DOMAIN-SUFFIX,symauth.com,Cloud
+- DOMAIN-SUFFIX,symcb.com,Cloud
+- DOMAIN-SUFFIX,symcd.com,Cloud
+- DOMAIN-SUFFIX,tapbots.com,Cloud
+- DOMAIN-SUFFIX,tapbots.net,Cloud
+- DOMAIN-SUFFIX,tdesktop.com,Cloud
+- DOMAIN-SUFFIX,techcrunch.com,Cloud
+- DOMAIN-SUFFIX,techsmith.com,Cloud
+- DOMAIN-SUFFIX,thepiratebay.org,Cloud
+- DOMAIN-SUFFIX,theverge.com,Cloud
+- DOMAIN-SUFFIX,time.com,Cloud
+- DOMAIN-SUFFIX,timeinc.net,Cloud
+- DOMAIN-SUFFIX,tiny.cc,Cloud
+- DOMAIN-SUFFIX,tinypic.com,Cloud
+- DOMAIN-SUFFIX,tmblr.co,Cloud
+- DOMAIN-SUFFIX,todoist.com,Cloud
+- DOMAIN-SUFFIX,trello.com,Cloud
+- DOMAIN-SUFFIX,trustasiassl.com,Cloud
+- DOMAIN-SUFFIX,tumblr.co,Cloud
+- DOMAIN-SUFFIX,tumblr.com,Cloud
+- DOMAIN-SUFFIX,tweetdeck.com,Cloud
+- DOMAIN-SUFFIX,tweetmarker.net,Cloud
+- DOMAIN-SUFFIX,twitch.tv,Cloud
+- DOMAIN-SUFFIX,txmblr.com,Cloud
+- DOMAIN-SUFFIX,typekit.net,Cloud
+- DOMAIN-SUFFIX,ubertags.com,Cloud
+- DOMAIN-SUFFIX,ublock.org,Cloud
+- DOMAIN-SUFFIX,ubnt.com,Cloud
+- DOMAIN-SUFFIX,ulyssesapp.com,Cloud
+- DOMAIN-SUFFIX,urchin.com,Cloud
+- DOMAIN-SUFFIX,usertrust.com,Cloud
+- DOMAIN-SUFFIX,v.gd,Cloud
+- DOMAIN-SUFFIX,v2ex.com,Cloud
+- DOMAIN-SUFFIX,vimeo.com,Cloud
+- DOMAIN-SUFFIX,vimeocdn.com,Cloud
+- DOMAIN-SUFFIX,vine.co,Cloud
+- DOMAIN-SUFFIX,vivaldi.com,Cloud
+- DOMAIN-SUFFIX,vox-cdn.com,Cloud
+- DOMAIN-SUFFIX,vsco.co,Cloud
+- DOMAIN-SUFFIX,vultr.com,Cloud
+- DOMAIN-SUFFIX,w.org,Cloud
+- DOMAIN-SUFFIX,w3schools.com,Cloud
+- DOMAIN-SUFFIX,webtype.com,Cloud
+- DOMAIN-SUFFIX,wikiwand.com,Cloud
+- DOMAIN-SUFFIX,wikileaks.org,Cloud
+- DOMAIN-SUFFIX,wikimedia.org,Cloud
+- DOMAIN-SUFFIX,wikipedia.com,Cloud
+- DOMAIN-SUFFIX,wikipedia.org,Cloud
+- DOMAIN-SUFFIX,windows.com,Cloud
+- DOMAIN-SUFFIX,windows.net,Cloud
+- DOMAIN-SUFFIX,wire.com,Cloud
+- DOMAIN-SUFFIX,wordpress.com,Cloud
+- DOMAIN-SUFFIX,workflowy.com,Cloud
+- DOMAIN-SUFFIX,wp.com,Cloud
+- DOMAIN-SUFFIX,wsj.com,Cloud
+- DOMAIN-SUFFIX,wsj.net,Cloud
+- DOMAIN-SUFFIX,xda-developers.com,Cloud
+- DOMAIN-SUFFIX,xeeno.com,Cloud
+- DOMAIN-SUFFIX,xiti.com,Cloud
+- DOMAIN-SUFFIX,yahoo.com,Cloud
+- DOMAIN-SUFFIX,yimg.com,Cloud
+- DOMAIN-SUFFIX,ying.com,Cloud
+- DOMAIN-SUFFIX,yoyo.org,Cloud
+- DOMAIN-SUFFIX,ytimg.com,Cloud
+- DOMAIN-SUFFIX,telegra.ph,Cloud
+- DOMAIN-SUFFIX,telegram.org,Cloud
+- IP-CIDR,91.108.4.0/22,Cloud,no-resolve
+- IP-CIDR,91.108.8.0/21,Cloud,no-resolve
+- IP-CIDR,91.108.16.0/22,Cloud,no-resolve
+- IP-CIDR,91.108.56.0/22,Cloud,no-resolve
+- IP-CIDR,149.154.160.0/20,Cloud,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,Cloud,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,Cloud,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,Cloud,no-resolve
+- IP-CIDR,120.232.181.162/32,Cloud,no-resolve
+- IP-CIDR,120.241.147.226/32,Cloud,no-resolve
+- IP-CIDR,120.253.253.226/32,Cloud,no-resolve
+- IP-CIDR,120.253.255.162/32,Cloud,no-resolve
+- IP-CIDR,120.253.255.34/32,Cloud,no-resolve
+- IP-CIDR,120.253.255.98/32,Cloud,no-resolve
+- IP-CIDR,180.163.150.162/32,Cloud,no-resolve
+- IP-CIDR,180.163.150.34/32,Cloud,no-resolve
+- IP-CIDR,180.163.151.162/32,Cloud,no-resolve
+- IP-CIDR,180.163.151.34/32,Cloud,no-resolve
+- IP-CIDR,203.208.39.0/24,Cloud,no-resolve
+- IP-CIDR,203.208.40.0/24,Cloud,no-resolve
+- IP-CIDR,203.208.41.0/24,Cloud,no-resolve
+- IP-CIDR,203.208.43.0/24,Cloud,no-resolve
+- IP-CIDR,203.208.50.0/24,Cloud,no-resolve
+- IP-CIDR,220.181.174.162/32,Cloud,no-resolve
+- IP-CIDR,220.181.174.226/32,Cloud,no-resolve
+- IP-CIDR,220.181.174.34/32,Cloud,no-resolve
+- DOMAIN,injections.adguard.org,DIRECT
+- DOMAIN,local.adguard.org,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,17.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR6,fe80::/10,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-KEYWORD,-cn,DIRECT
+- GEOSITE,private,DIRECT
+- GEOSITE,cn,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Cloud
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+secret: DzuH1Xkl
+external-ui: "/usr/share/openclash/ui"
+external-ui-name: metacubexd
+external-ui-url: https://codeload.github.com/MetaCubeX/metacubexd/zip/refs/heads/gh-pages
+keep-alive-interval: 15
+keep-alive-idle: 600
+ipv6: false
+experimental:
+  quic-go-disable-gso: true
+external-controller-cors:
+  allow-origins:
+  - wx32.x3322.net
+  allow-private-network: true
+geox-url: {}
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+      - 443
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+  force-domain:
+  - "+.netflix.com"
+  - "+.nflxvideo.net"
+  - "+.amazonaws.com"
+  - "+.media.dssott.com"
+  skip-domain:
+  - Mijia Cloud
+  - dlg.io.mi.com
+  - "+.oray.com"
+  - "+.sunlogin.net"
+  - "+.push.apple.com"
+  parse-pure-ip: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+authentication:
+- Clash:JHf12E4s
