@@ -104,6 +104,9 @@ jobs:
       run: |
         [ -e defconfig/mt7986.config ] && cp defconfig/mt7986.config .config
 
+    - name: Set execute permission for restore script
+      run: chmod +x files/etc/uci-defaults/99-restore-config
+
     - name: Make Compile Configuration
       id: make-compile-config
       run: |
