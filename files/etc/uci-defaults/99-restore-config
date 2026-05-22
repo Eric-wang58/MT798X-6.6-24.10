@@ -1,29 +1,64 @@
 #!/bin/sh
 
-# ======================================================
+# ==================================================
 # OpenWrt 一键恢复配置脚本（恢复出厂也生效）
 # 刷完固件自动恢复所有备份配置 + 插件自启
-# ======================================================
+# ==================================================
 
-# 1. 把固件里打包的备份配置，复制到实际系统配置目录
+# 标记脚本已执行，避免重复运行
+if [ -f /etc/config/.uci-defaults-done ]; then
+    exit 0
+fi
+
+# --------------------------
+# 1. 复制所有备份配置文件
+# --------------------------
+# 恢复 /etc/config/ 配置目录
 cp -f /rom/etc/config/* /etc/config/
 
+# 恢复 AdGuardHome 主配置
+cp -f /rom/etc/adguardhome.yaml /etc/adguardhome.yaml
+
+# 恢复 OpenClash 完整目录
+cp -rf /rom/etc/openclash/* /etc/openclash/
+
+# 恢复 dnsmasq DNS配置
+cp -f /rom/etc/dnsmasq.conf /etc/dnsmasq.conf
+
+# 恢复其他常用配置文件
+cp -f /rom/etc/dropbear/* /etc/dropbear/ 2>/dev/null
+cp -f /rom/etc/uhttpd.crt /etc/uhttpd.crt 2>/dev/null
+cp -f /rom/etc/uhttpd.key /etc/uhttpd.key 2>/dev/null
+cp -f /rom/etc/rc.local /etc/rc.local 2>/dev/null
+cp -f /rom/etc/sysctl.conf /etc/sysctl.conf 2>/dev/null
+
+# --------------------------
 # 2. 修复权限，防止配置文件无法读取
+# --------------------------
 chown -R root:root /etc/config/
 chmod -R 600 /etc/config/
+chown root:root /etc/adguardhome.yaml /etc/openclash/ 2>/dev/null
+chmod 600 /etc/adguardhome.yaml 2>/dev/null
 
+# --------------------------
 # 3. 重启核心服务，让配置立即生效
+# --------------------------
 /etc/init.d/network restart
 /etc/init.d/firewall restart
-wifi reload
+wifi down && wifi up  # 替换原有的wifi reload，兼容性更好
+/etc/init.d/dnsmasq restart
 
-# 4. 插件自动启用并启动（和你内置的四大插件一一对应）
-/etc/init.d/ddns enable && /etc/init.d/ddns start
-/etc/init.d/openclash enable && /etc/init.d/openclash start
-/etc/init.d/adguardhome enable && /etc/init.d/adguardhome start
-/etc/init.d/passwall enable && /etc/init.d/passwall start
+# --------------------------
+# 4. 插件自动启用并启动（适配你的四大插件）
+# --------------------------
+[ -x /etc/init.d/ddns ] && /etc/init.d/ddns enable && /etc/init.d/ddns start
+[ -x /etc/init.d/openclash ] && /etc/init.d/openclash enable && /etc/init.d/openclash start
+[ -x /etc/init.d/adguardhome ] && /etc/init.d/adguardhome enable && /etc/init.d/adguardhome start
+[ -x /etc/init.d/passwall ] && /etc/init.d/passwall enable && /etc/init.d/passwall start
 
-# 5. 标记脚本已执行，避免重复运行
+# --------------------------
+# 5. 标记脚本已执行，防止重复运行
+# --------------------------
 touch /etc/config/.uci-defaults-done
 
 exit 0
